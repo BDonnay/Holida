@@ -97,8 +97,8 @@ class Hour5 implements Flake {
     location.add(gravity);
   }
   void somethingSpecial() {
-    textFont(mono);
-    text("somethingSpecial:", 12, 60);
+    //textFont(mono);
+   // text("somethingSpecial:", 12, 60);
   }
 }
 class Hour6 implements Flake {
@@ -156,8 +156,8 @@ class Hour6 implements Flake {
     location.add(gravity);
   }
   void somethingSpecial() {
-    textFont(mont);
-    text("GoogleFonts!", 12, 100);
+   // textFont(mont);
+   // text("GoogleFonts!", 12, 100);
   }
 }
 
