@@ -54,8 +54,8 @@ class Hour5 implements Flake {
     velocity = new PVector(random(-.22, .22), 5);
     acceleration = new PVector(0, 0.001);
     lifespan=255;
-    mono = createFont("GloriaHallelujah.ttf", 22);
-    //mono = createFont("https://fonts.googleapis.com/css?family=Courgette", 22);
+    //mono = createFont("GloriaHallelujah.ttf", 22);
+    mono = createFont("https://fonts.googleapis.com/css?family=Courgette", 22);
   }
   Hour5(int x, int y) {
   }
@@ -115,8 +115,8 @@ class Hour6 implements Flake {
     velocity = new PVector(random(-.22, .22), 5);
     acceleration = new PVector(0, 0.001);
     lifespan=255;
-   mont = createFont("Dekko-Regular.ttf", 32);
-   // mont = createFont("https://fonts.googleapis.com/css?family=Sigmar+One", 32);
+   //mont = createFont("Dekko-Regular.ttf", 32);
+    mont = createFont("https://fonts.googleapis.com/css?family=Sigmar+One", 32);
     
   }
   Hour6(int x, int y) {
