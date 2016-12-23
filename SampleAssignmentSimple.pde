@@ -66,7 +66,7 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   }
   endShape(CLOSE);
 }
-
+}
 class flake {
 
   float x;  
