@@ -11,14 +11,14 @@ void draw() {
   background(14,35,61);
   fill(255);
   //flake = (flake[]) append(flake, new flake(300, 0));
-  flakes.add(new flake(random (0, 1200),0, random (5, 10)));
+  flakes.add(new flake(random (0, 1200),0, random (5, 10), random(-2,2), random(0,5)));
   if (flakes.size()>total) {
     flakes.remove(0);
   }
 
   for (int i=0; i<flakes.size(); i++) {
-    flakes.get(i).setX(flakes.get(i).getX() + random(-2,2));
-    flakes.get(i).setY(flakes.get(i).getY() + random (0, 5));
+    flakes.get(i).setX(flakes.get(i).getX() + flakes.get(i).getxVel());
+    flakes.get(i).setY(flakes.get(i).getY() + flakes.get(i).getyVel());
     ellipse(flakes.get(i).getX(), flakes.get(i).getY(), flakes.get(i).getDiameter(), flakes.get(i).getDiameter());
   }
   fill(255);
@@ -75,15 +75,21 @@ class flake {
   float yVel; 
   float diameter;
 
-  flake(float xpos, float ypos, float dia) {
+  flake(float xpos, float ypos, float dia, float xv, float yv) {
     x = xpos; 
     y = ypos;
-   // xVel = random (-2, 2);
-    //yVel = random (0, 5);
+    xVel = xv;
+    yVel = yv;
     diameter = dia;
   }
   float getX(){
     return x;
+  }
+  float getxVel(){
+    return xVel;
+  }
+  float getyVel(){
+    return yVel;
   }
   void setX(float xValue){
     x = xValue;
