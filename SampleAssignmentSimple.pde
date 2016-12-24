@@ -1,4 +1,5 @@
-flake[] flake = new flake[0];
+//flake[] flake = new flake[0];
+ArrayList<flake> flakes=new ArrayList<flake>();
 int total = 500;
 PImage snowman;
 void setup () {
@@ -9,16 +10,16 @@ void setup () {
 void draw() {
   background(14,35,61);
   fill(255);
-  flake = (flake[]) append(flake, new flake(300, 0));
-
-  if (flake.length>total) {
-    flake = (flake[]) subset(flake, 1);
+  //flake = (flake[]) append(flake, new flake(300, 0));
+  flakes.add(new flake(random (0, 1200),0, random (5, 10)));
+  if (flakes.size()>total) {
+    flakes.remove(0);
   }
 
-  for (int i=0; i<flake.length; i++) {
-    flake[i].x += flake[i].xVel;
-    flake[i].y += flake[i].yVel;
-    ellipse(flake[i].x, flake[i].y, flake[i].diameter, flake[i].diameter);
+  for (int i=0; i<flakes.size(); i++) {
+    flakes.get(i).setX(flakes.get(i).getX() + random(-2,2));
+    flakes.get(i).setY(flakes.get(i).getY() + random (0, 5));
+    ellipse(flakes.get(i).getX(), flakes.get(i).getY(), flakes.get(i).getDiameter(), flakes.get(i).getDiameter());
   }
   fill(255);
   rect(0,700,1200,100);
@@ -66,7 +67,6 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   }
   endShape(CLOSE);
 }
-
 class flake {
 
   float x;  
@@ -75,11 +75,29 @@ class flake {
   float yVel; 
   float diameter;
 
-  flake(float xpos, float ypos) {
-    x = xpos = random (0, 1200);
+  flake(float xpos, float ypos, float dia) {
+    x = xpos; 
     y = ypos;
-    xVel = random (-2, 2);
-    yVel = random (0, 5);
-    diameter = random (5, 10);
+   // xVel = random (-2, 2);
+    //yVel = random (0, 5);
+    diameter = dia;
   }
+  float getX(){
+    return x;
+  }
+  void setX(float xValue){
+    x = xValue;
+  } 
+  float getY(){
+    return y;
+  }
+  void setY(float yValue){
+    y = yValue;
+  } 
+  float getDiameter(){
+    return diameter;
+  }
+  void setDiameter(float diameterValue){
+    diameter = diameterValue;
+  } 
 }
