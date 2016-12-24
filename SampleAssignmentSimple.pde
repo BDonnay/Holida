@@ -1,4 +1,4 @@
-//flake[] flake = new flake[0];
+flake[] flake = new flake[0];
 int total = 500;
 PImage snowman;
 void setup () {
@@ -9,7 +9,7 @@ void setup () {
 void draw() {
   background(14,35,61);
   fill(255);
-  /*flake = (flake[]) append(flake, new flake(300, 0));
+  flake = (flake[]) append(flake, new flake(300, 0));
 
   if (flake.length>total) {
     flake = (flake[]) subset(flake, 1);
@@ -19,7 +19,7 @@ void draw() {
     flake[i].x += flake[i].xVel;
     flake[i].y += flake[i].yVel;
     ellipse(flake[i].x, flake[i].y, flake[i].diameter, flake[i].diameter);
-  }*/
+  }
   fill(255);
   rect(0,700,1200,100);
   textSize(80);
@@ -52,23 +52,6 @@ void draw() {
   image(snowman,278,432,40,40);
 }
 
-/*class flake {
-
-  float x;  
-  float y;
-  float xVel;
-  float yVel; 
-  float diameter;
-
-  flake(float xpos, float ypos) {
-    x = xpos = random (0, 1200);
-    y = ypos;
-    xVel = random (-2, 2);
-    yVel = random (0, 5);
-    diameter = random (5, 10);
-  }
-}*/
-
 void star(float x, float y, float radius1, float radius2, int npoints) {
   float angle = TWO_PI / npoints;
   float halfAngle = angle/2.0;
@@ -84,3 +67,19 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   endShape(CLOSE);
 }
 
+class flake {
+
+  float x;  
+  float y;
+  float xVel;
+  float yVel; 
+  float diameter;
+
+  flake(float xpos, float ypos) {
+    x = xpos = random (0, 1200);
+    y = ypos;
+    xVel = random (-2, 2);
+    yVel = random (0, 5);
+    diameter = random (5, 10);
+  }
+}
