@@ -9,8 +9,8 @@ void setup () {
 void draw() {
   background(14,35,61);
   fill(255);
- /* flake = (flake[]) append(flake, new flake(300, 0));
-
+  flake = (flake[]) append(flake, new flake(300, 0));
+/*
   if (flake.length>total) {
     flake = (flake[]) subset(flake, 1);
   }*/
